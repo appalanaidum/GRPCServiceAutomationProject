@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="9.274">
+    <testcase classname="Retrieve State Agency Information" name="Retrieve State Agency Information Successfully" time="5.281">
+        <system-out><![CDATA[Given the gRPC client is connected to the server............................passed
+When I make a call to retrieve the state agency information with a valid state agency id "406a17c1-3574-4597-9345-3dceb12121ab".passed
+Then the response should include the state agency details...................passed
+And the response status code should indicate success........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Retrieve State Agency Information" name="Retrieve Local Agency Information Successfully" time="3.507">
+        <system-out><![CDATA[Given the gRPC client is connected to the server............................passed
+When I make a call to retrieve the local agency information with a valid StateAgencyId 933edcf0-7925-4a86-89a3-7c8776df9448 and LocalAgencyId 48b9873c-1466-475b-937f-a33bac4fda1d and MisLocalAgencyId 9000000001.passed
+Then the response should include the local agency details...................passed
+]]></system-out>
+    </testcase>
+</testsuite>

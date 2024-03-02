@@ -1,0 +1,148 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-02T09:05:46.210Z",
+        "line": 7,
+        "name": "Retrieve State Agency Information Successfully",
+        "description": "",
+        "id": "retrieve-state-agency-information;retrieve-state-agency-information-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1025126500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the gRPC client is connected to the server",
+            "match": {
+              "location": "com.stepdefinetions.EBTCPAYStepDefinetions.the_g_rpc_client_is_connected_to_the_server()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4069741700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I make a call to retrieve the state agency information with a valid state agency id \"406a17c1-3574-4597-9345-3dceb12121ab\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"406a17c1-3574-4597-9345-3dceb12121ab\"",
+                  "offset": 84
+                }
+              ],
+              "location": "com.stepdefinetions.EBTCPAYStepDefinetions.i_make_a_call_to_retrieve_the_state_agency_information_with_a_valid_state_agency_id(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4111700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the response should include the state agency details",
+            "match": {
+              "location": "com.stepdefinetions.EBTCPAYStepDefinetions.the_response_should_include_the_state_agency_details()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the response status code should indicate success",
+            "match": {
+              "location": "com.stepdefinetions.EBTCPAYStepDefinetions.the_response_status_code_should_indicate_success()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Sanity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-02T09:05:51.509Z",
+        "line": 21,
+        "name": "Retrieve Local Agency Information Successfully",
+        "description": "",
+        "id": "retrieve-state-agency-information;retrieve-local-agency-information-successfully;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1833600,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the gRPC client is connected to the server",
+            "match": {
+              "location": "com.stepdefinetions.EBTCPAYStepDefinetions.the_g_rpc_client_is_connected_to_the_server()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3496401300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I make a call to retrieve the local agency information with a valid StateAgencyId 933edcf0-7925-4a86-89a3-7c8776df9448 and LocalAgencyId 48b9873c-1466-475b-937f-a33bac4fda1d and MisLocalAgencyId 9000000001",
+            "match": {
+              "arguments": [
+                {
+                  "val": "933edcf0-7925-4a86-89a3-7c8776df9448",
+                  "offset": 82
+                },
+                {
+                  "val": "48b9873c-1466-475b-937f-a33bac4fda1d",
+                  "offset": 137
+                },
+                {
+                  "val": "9000000001",
+                  "offset": 195
+                }
+              ],
+              "location": "com.stepdefinetions.EBTCPAYStepDefinetions.i_make_a_call_to_retrieve_the_local_agency_information_with_a_valid_state_agency_id_and_local_agency_id__and_mis_local_agency_id(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 661900,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the response should include the local agency details",
+            "match": {
+              "location": "com.stepdefinetions.EBTCPAYStepDefinetions.the_response_should_include_the_local_agency_details()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Sanity"
+          }
+        ]
+      }
+    ],
+    "name": "Retrieve State Agency Information",
+    "description": "  As a client of the system\n  I want to retrieve information about a state agency\n  So that I can access relevant details",
+    "id": "retrieve-state-agency-information",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/EBTCPAY_StateAgencyServices.feature",
+    "tags": []
+  }
+]

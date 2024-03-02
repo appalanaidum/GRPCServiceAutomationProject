@@ -1,0 +1,433 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "StateAgencyManagement.Api.Protos";
+
+package stateAgencyManagement;
+
+service StateAgencyManagement {
+	rpc CreateStateAgency(CreateStateAgencyRequest) returns (CreateStateAgencyResponse);
+	rpc UpdateStateAgency(UpdateStateAgencyRequest) returns (UpdateStateAgencyResponse);
+	rpc GetStateAgency(GetStateAgencyRequest) returns (GetStateAgencyResponse);
+	rpc SearchStateAgency(SearchStateAgencyRequest) returns (SearchStateAgencyResponse);
+	rpc GetStateAgencyByWicAuthorityId(GetStateAgencyByWicAuthorityIdRequest) returns (GetStateAgencyByWicAuthorityIdResponse);
+	rpc AddLocalAgency(AddLocalAgencyRequest) returns (AddLocalAgencyResponse);
+	rpc UpdateLocalAgency(UpdateLocalAgencyRequest) returns (UpdateLocalAgencyResponse);
+	rpc AddClinic(AddClinicRequest) returns (AddClinicResponse);
+	rpc UpdateClinic(UpdateClinicRequest) returns (UpdateClinicResponse);
+	rpc GetLocalAgency(GetLocalAgencyRequest) returns (GetLocalAgencyResponse);
+	rpc ListLocalAgencies(ListLocalAgenciesRequest) returns (ListLocalAgenciesResponse);
+	rpc GetClinic(GetClinicRequest) returns (GetClinicResponse);
+	rpc ListClinics(ListClinicsRequest) returns (ListClinicsResponse);
+}
+
+message Date {
+  int32 year = 1;
+  int32 month = 2;
+  int32 day = 3;
+}
+
+message CreateStateAgencyRequest {
+  string name = 1;
+  string wicAuthorityId = 2;
+  string bin = 3;
+  string stateIdentifierCode = 4;
+  string misSystemId = 5;
+  string operationsTimeZone = 6;
+  string cutoffTime = 7;
+  bool costContainmentFlag = 8;
+  uint32 cardNumberLength = 9;
+  uint32 maximumCardHolders = 10;
+  uint32 maximumPinAttempts = 11;
+  string contactPerson = 12;
+  string contactPhoneNumber = 13;
+  google.protobuf.StringValue contactAlternatePhoneNumber = 14;
+  string contactEmail = 15;
+  string settlementTime = 16;
+}
+
+message CreateStateAgencyResponse {
+  string stateAgencyId = 1;
+  string name = 2;
+  string wicAuthorityId = 3;
+  string bin = 4;
+  string stateIdentifierCode = 5;
+  string misSystemId = 6;
+  string operationsTimeZone = 7;
+  string cutoffTime = 8;
+  bool costContainmentFlag = 9;
+  uint32 cardNumberLength = 10;
+  uint32 maximumCardHolders = 11;
+  uint32 maximumPinAttempts = 12;
+  string contactPerson = 13;
+  string contactPhoneNumber = 14;
+  google.protobuf.StringValue contactAlternatePhoneNumber = 15;
+  string contactEmail = 16;
+  bool active = 17;
+  string settlementTime = 18;
+}
+
+message UpdateStateAgencyRequest {
+  google.protobuf.StringValue stateAgencyId = 1;
+  google.protobuf.StringValue name = 2;
+  google.protobuf.StringValue wicAuthorityId = 3;
+  google.protobuf.StringValue stateIdentifierCode = 4;
+  google.protobuf.StringValue misSystemId = 5;
+  google.protobuf.StringValue operationsTimeZone = 6;
+  google.protobuf.StringValue cutoffTime = 7;
+  google.protobuf.BoolValue costContainmentFlag = 8;
+  google.protobuf.UInt32Value cardNumberLength = 9;
+  google.protobuf.UInt32Value maximumCardHolders = 10;
+  google.protobuf.UInt32Value maximumPinAttempts = 11;
+  google.protobuf.StringValue contactPerson = 12;
+  google.protobuf.StringValue contactPhoneNumber = 13;
+  google.protobuf.StringValue contactAlternatePhoneNumber = 14;
+  google.protobuf.StringValue contactEmail = 15;
+  google.protobuf.BoolValue active = 16;
+  google.protobuf.StringValue settlementTime = 17;
+}
+
+message UpdateStateAgencyResponse {
+  string stateAgencyId = 1;
+  string name = 2;
+  string wicAuthorityId = 3;
+  string bin = 4;
+  string stateIdentifierCode = 5;
+  string misSystemId = 6;
+  string operationsTimeZone = 7;
+  string cutoffTime = 8;
+  bool costContainmentFlag = 9;
+  uint32 cardNumberLength = 10;
+  uint32 maximumCardHolders = 11;
+  uint32 maximumPinAttempts = 12;
+  string contactPerson = 13;
+  string contactPhoneNumber = 14;
+  google.protobuf.StringValue contactAlternatePhoneNumber = 15;
+  string contactEmail = 16;
+  bool active = 17;
+  string settlementTime = 18;
+} 
+
+message GetStateAgencyRequest {
+  string stateAgencyId = 1;
+}
+
+message GetStateAgencyByWicAuthorityIdRequest {
+  string wicAuthorityId = 1;
+}
+
+message GetStateAgencyByWicAuthorityIdResponse {
+  string stateAgencyId = 1;
+  string name = 2;
+  string wicAuthorityId = 3;
+  string bin = 4;
+  string stateIdentifierCode = 5;
+  string misSystemId = 6;
+  string operationsTimeZone = 7;
+  string cutoffTime = 8;
+  bool costContainmentFlag = 9;
+  uint32 cardNumberLength = 10;
+  uint32 maximumCardHolders = 11;
+  uint32 maximumPinAttempts = 12;
+  string contactPerson = 13;
+  string contactPhoneNumber = 14;
+  google.protobuf.StringValue contactAlternatePhoneNumber = 15;
+  string contactEmail = 16;
+  bool active = 17;
+  string settlementTime = 18;
+}
+
+message GetStateAgencyResponse {
+  string stateAgencyId = 1;
+  string name = 2;
+  string wicAuthorityId = 3;
+  string bin = 4;
+  string stateIdentifierCode = 5;
+  string misSystemId = 6;
+  string operationsTimeZone = 7;
+  string cutoffTime = 8;
+  bool costContainmentFlag = 9;
+  uint32 cardNumberLength = 10;
+  uint32 maximumCardHolders = 11;
+  uint32 maximumPinAttempts = 12;
+  string contactPerson = 13;
+  string contactPhoneNumber = 14;
+  google.protobuf.StringValue contactAlternatePhoneNumber = 15;
+  string contactEmail = 16;
+  bool active = 17;
+  string settlementTime = 18;
+}
+
+message SearchStateAgencyRequest {
+  google.protobuf.StringValue stateIdentifierCode = 1;
+  google.protobuf.StringValue name = 2;
+  google.protobuf.StringValue bin = 3;
+  google.protobuf.StringValue misSystemId = 4;
+  google.protobuf.BoolValue active = 5;
+  FilterCriteria filterCriteria = 6;
+  google.protobuf.StringValue filter = 7;
+}
+
+message SearchStateAgencyResponse {
+  repeated StateAgency stateAgencies = 1;
+  int64 count = 2;
+}
+
+message StateAgency { 
+  string stateAgencyId = 1;
+  string name = 2;
+  string wicAuthorityId = 3;
+  string bin = 4;
+  string stateIdentifierCode = 5;
+  string misSystemId = 6;
+  string operationsTimeZone = 7;
+  string cutoffTime = 8;
+  bool costContainmentFlag = 9;
+  uint32 cardNumberLength = 10;
+  uint32 maximumCardHolders = 11;
+  uint32 maximumPinAttempts = 12;
+  string contactPerson = 13;
+  string contactPhoneNumber = 14;
+  google.protobuf.StringValue contactAlternatePhoneNumber = 15;
+  string contactEmail = 16;
+  bool active = 17;
+  string settlementTime = 18;
+}
+
+message AddLocalAgencyRequest {
+  string stateAgencyId = 1;
+  Address address = 2;
+  string businessName = 3;
+  Date beginDate = 4;
+  Date endDate = 5;
+  ContactProfile profile = 6;
+  string misLocalAgencyId = 7;
+  google.protobuf.StringValue operatingHours = 8;
+  string reasonCode = 9;
+}
+
+message AddLocalAgencyResponse {
+  string localAgencyId = 1;
+  string stateAgencyId = 2;
+  Address address = 3;
+  string businessName = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string misLocalAgencyId = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  bool active = 11;
+}
+
+message AddClinicRequest {
+  google.protobuf.StringValue localAgencyId = 1;
+  google.protobuf.StringValue misLocalAgencyId = 2;
+  Address address = 3;
+  string businessName = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string misClinicId = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+}
+
+message AddClinicResponse {
+  string clinicId = 1;
+  string localAgencyId = 2;
+  Address address = 3;
+  string businessName = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string misClinicId = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  bool active = 11;
+}
+
+message UpdateLocalAgencyRequest {
+  string stateAgencyId = 1;
+  Address address = 2;
+  google.protobuf.StringValue businessName = 3;
+  Date beginDate = 4;
+  Date endDate = 5;
+  ContactProfile profile = 6;
+  string misLocalAgencyId = 7;
+  google.protobuf.StringValue operatingHours = 8;
+  string reasonCode = 9;
+  string actionCode = 10;
+}
+
+message UpdateLocalAgencyResponse {
+  string localAgencyId = 1;
+  string stateAgencyId = 2;
+  Address address = 3;
+  string businessName = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string misLocalAgencyId = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  bool active = 11;
+}
+
+message UpdateClinicRequest {
+  string actionCode = 1;
+  Address address = 2;
+  string businessName = 3;
+  string misClinicId = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string reasonCode = 8;
+}
+
+message UpdateClinicResponse {
+  string clinicId = 1;
+  string localAgencyId = 2;
+  Address address = 3;
+  string businessName = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string misClinicId = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  string actionCode = 11;
+  bool active = 12;
+}
+
+message GetClinicRequest {
+  google.protobuf.StringValue misClinicId = 1;
+  google.protobuf.StringValue clinicId = 2;
+}
+
+message GetClinicResponse {
+  string clinicId = 1;
+  string localAgencyId = 2;
+  string localAgencyBusinessName = 3;
+  Address address = 4;
+  string businessName = 5;
+  Date beginDate = 6;
+  Date endDate = 7;
+  ContactProfile profile = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  string misClinicId = 11;
+  bool active = 12;
+  string stateAgencyId = 13;
+}
+
+message GetLocalAgencyRequest {
+  string stateAgencyId = 1;
+  google.protobuf.StringValue misLocalAgencyId = 2;
+  google.protobuf.StringValue localAgencyId = 3;
+}
+
+message GetLocalAgencyResponse {
+  string localAgencyId = 1;
+  string stateAgencyId = 2;
+  Address address = 3;
+  string businessName = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string misLocalAgencyId = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  bool active = 11;
+}
+
+message ListClinicsRequest {
+  google.protobuf.StringValue stateAgencyId = 1;
+  google.protobuf.StringValue localAgencyId = 2;
+  google.protobuf.StringValue businessName = 3;
+  google.protobuf.BoolValue active = 4;
+  FilterCriteria filterCriteria = 5;
+  google.protobuf.StringValue clinicId = 6;
+  google.protobuf.StringValue city = 7;
+  google.protobuf.StringValue filter = 8;
+}
+
+message ListClinicsResponse {
+  int32 count = 1;
+  repeated Clinic clinics = 2;
+}
+
+message ListLocalAgenciesRequest {
+  google.protobuf.StringValue stateAgencyId = 1;
+  google.protobuf.StringValue businessName = 2;
+  google.protobuf.BoolValue active = 3;
+  FilterCriteria filterCriteria = 4;
+  google.protobuf.StringValue localAgencyId = 5;
+  google.protobuf.StringValue city = 6;
+  google.protobuf.StringValue filter = 7;
+}
+
+message ListLocalAgenciesResponse {
+  int64 count = 1;
+  repeated LocalAgency localAgencies = 2;
+}
+
+message LocalAgency {
+  string localAgencyId = 1;
+  string stateAgencyId = 2;
+  Address address = 3;
+  string businessName = 4;
+  Date beginDate = 5;
+  Date endDate = 6;
+  ContactProfile profile = 7;
+  string misLocalAgencyId = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  bool active = 11;
+}
+
+message Clinic {
+  string clinicId = 1;
+  string localAgencyId = 2;
+  string localAgencyBusinessName = 3;
+  Address address = 4;
+  string businessName = 5;
+  Date beginDate = 6;
+  Date endDate = 7;
+  ContactProfile profile = 8;
+  google.protobuf.StringValue operatingHours = 9;
+  string reasonCode = 10;
+  string misClinicId = 11;
+  bool active = 12;
+  string stateAgencyId = 13;
+}
+
+message ContactProfile {
+  ContactName person = 1;
+  google.protobuf.StringValue emailAddress = 2;
+  string phoneNumber = 3;
+}
+
+message ContactName {
+  string firstName = 1;
+  google.protobuf.StringValue middleName = 2;
+  string lastName = 3;
+  google.protobuf.StringValue suffix = 4;
+}
+
+message Address {
+  string addressLine1 = 1;
+  google.protobuf.StringValue addressLine2 = 2;
+  string city = 3;
+  string state = 4;
+  uint32 zipCode = 5;
+}
+
+message FilterCriteria {
+  google.protobuf.StringValue sortColumn = 1;
+  uint32 pageSize = 2;
+  uint32 pageNumber = 3;
+  sint32 sortDirection = 4;
+}
